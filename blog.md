@@ -63,6 +63,13 @@ RunDetails(run).show()
 
 ## Connect to cluster
 
+```python
+from dask.distributed import Client
+
+c = Client(f'{headnode}:8786)
+c
+```
+
 ## Getting data
 
 ## Exploring the data
