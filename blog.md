@@ -66,7 +66,7 @@ RunDetails(run).show()
 ```python
 from dask.distributed import Client
 
-c = Client(f'{headnode}:8786)
+c = Client(f'tcp://{headnode}:8786)
 c
 ```
 
