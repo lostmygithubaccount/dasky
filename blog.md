@@ -63,9 +63,11 @@ You will need the password you setup for the SSH account on the cluster. This wi
 
 ![Start cluster](media/start-cluster.png)
 
-Wow, a cluster with 2.3 TB of memory and 320 cores!!! 
+Wow, a cluster with 2.3 TB of memory and 320 cores!!! This is where the fun begins.
 
 ## Getting data
+
+Let's get some data.
 
 ## Exploring the data
 
