@@ -10,6 +10,8 @@ blah blah blah
 
 ![Instance setup](media/instance-setup.png)
 
+![Launch jupyter](media/launch-jupyter.png)
+
 ## Setup cluster
 
 ## Connect to cluster
