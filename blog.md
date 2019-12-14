@@ -23,25 +23,10 @@ from azureml.core import Workspace, Experiment
 from azureml.widgets import RunDetails
 from azureml.core.runconfig import RunConfiguration, MpiConfiguration
 from azureml.train.estimator import Estimator
-```
 
-then:
-
-```python
 ws = Workspace.from_config()
-ws
-```
-
-then:
-
-```python
 ct = ws.compute_targets['dask-cluster']
-ct
-```
 
-then:
-
-```python
 est = Estimator('dask', 
                 compute_target=ct, 
                 entry_script='startDask.py', 
@@ -51,11 +36,7 @@ est = Estimator('dask',
                 distributed_training=MpiConfiguration())
 
 run = Experiment(ws, 'dask').submit(est)
-```
 
-then:
-
-```python
 RunDetails(run).show()
 ```
 
