@@ -4,15 +4,15 @@
 
 blah blah blah
 
-## Cluster setup
+## Create cluster and compute instance
 
 ![Cluster setup](media/cluster-setup.png)
 
-## Compute instance setup
-
 ![Instance setup](media/instance-setup.png)
 
-## Connecting to Dask
+## Setup cluster
+
+## Connect to cluster
 
 ## Getting data
 
