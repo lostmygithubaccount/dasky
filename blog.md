@@ -12,6 +12,8 @@ blah blah blah
 
 ![Launch jupyter](media/launch-jupyter.png)
 
+![Clone examples](media/clone-examples.png)
+
 ## Setup cluster
 
 ## Connect to cluster
