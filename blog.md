@@ -44,12 +44,26 @@ RunDetails(run).show()
 
 ## Connect to cluster
 
+Start the cluster
+
 ```python
 from dask.distributed import Client
 
 c = Client(f'tcp://{headnode}:8786)
 c
 ```
+
+Optionally, run the output of the following in a terminal on the compute instance:
+
+```python
+print(f'ssh daskuser@{headnode} -L 8788:{headnode}:8787')
+```
+
+You will need the password you setup for the SSH account on the cluster. This will forward the Dask dashboard bokeh app to the compute instance. You can access it at `https://{compute_instance}-8788.{region}.instances.azureml.net/status`. For example, with my compute instance named `dask-instance` in region `northcentralus` the link `https://dask-instance-8788.northcentralus.instances.azureml.net/status` works.
+
+![Start cluster](media/start-cluster.png)
+
+Wow, a cluster with 2.3 TB of memory and 320 cores!!! 
 
 ## Getting data
 
