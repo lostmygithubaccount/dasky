@@ -8,7 +8,7 @@ blah blah blah
 
 We will create an Azure ML compute cluster and compute instance. The instance will be our interface with the cluster, where we will set it up and send it commands through a Jupyter notebook. Both will be placed in the same Azure virtual network. If you do not already have a virtual network, you can [easily create one](https://docs.microsoft.com/azure/virtual-network/quick-create-portal#create-a-virtual-network) using default settings. Having both the Jupyterlab interface and dask cluster in the same virtual network allows for easy connection between the two and increased security through firewalls and other features. 
 
-First, let's setup the Azure ML cluster. It is recommended to use `STANDARD_DS12_v2` or similar sized. For this example, I'll use a cluster with 20 nodes. Make sure to configure the cluster in the virtual network and create a username and password/SSH key as shown below. The login information will be used to setup port forwarding between the instance and the cluster, which is optional but highly recommended to connect to the dask dashboard.
+First, let's setup the Azure ML cluster. It is recommended to use `STANDARD_DS12_v2` or similar sized. For this example, I'll use a cluster with 20 nodes. Make sure to configure the cluster in the virtual network and create a username and password/SSH key as shown below. The login information will be used to setup port forwarding between the instance and the cluster, which is optional but highly recommended to connect to the dask dashboard. You do not need to enable port 22. 
 
 ![Cluster setup](media/cluster-setup.png)
 
@@ -16,11 +16,11 @@ Next, let's setup the compute instance. Since this compute will not be doing muc
 
 ![Instance setup](media/instance-setup.png)
 
-If using JupyterLab, click on the button to clone a git repo. The repo we will clone is hosted at https://github.com/lostmygithubaccount/dask-examples.git. Copy this link and clone the repo. 
+Once ready, you will have a link to open JupyterLab (recommended) or Jupyter. Click one of the links.
 
 ![Launch jupyter](media/launch-jupyter.png)
 
-Once ready, you will have a link to open JupyterLab (recommended) or Jupyter. Click one of the links.
+If using JupyterLab, click on the button to clone a git repo. The repo we will clone is hosted at https://github.com/lostmygithubaccount/dask-examples.git. Copy this link and clone the repo. 
 
 ![Clone examples](media/clone-examples.jpg)
 
