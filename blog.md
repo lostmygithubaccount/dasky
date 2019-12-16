@@ -28,7 +28,7 @@ Open up `StartDask.ipynb`.
 
 ## Setup cluster
 
-The following code will import Azure ML dependencies for connecting to a workspace, creating an experiment, and setting up a run. If you are unfamiliar with these terms, please visit [the documentation](https://docs.microsoft.com/en-us/azure/machine-learning/service/concept-azure-machine-learning-architecture#workspaces).
+The following code will import Azure ML dependencies for connecting to a workspace, creating an experiment, and setting up a run. If you are unfamiliar with these terms, please visit [the documentation](https://docs.microsoft.com/en-us/azure/machine-learning/service/concept-azure-machine-learning-architecture#workspaces). It is split over the first few cells in `StartDask.ipynb`. 
 
 ```python
 from azureml.core import Workspace, Experiment
@@ -53,6 +53,8 @@ RunDetails(run).show()
 ```
 
 A widget will appear showing the status of the run. It may take a few minutes for the cluster to scale up, set up, and be ready for use. When ready, you'll see `headnode`, `cluster`, and others logged to the run. At this point, the cluster is ready to use.  
+
+In the provided notebook, the cell below this step will wait for the run to have `headnode` logged to it before proceeding. This needs to be ready before we can connect to the cluster. 
 
 ![Start run](media/start-run.png)
 
@@ -87,3 +89,8 @@ Let's get some data.
 
 ## Exploring the data
 
+## Preparing the data 
+
+## Writing to a dataset 
+
+## Conclusion 
