@@ -85,6 +85,8 @@ print(f'ssh daskuser@{headnode} -L 8788:{headnode}:8787')
 
 You will need the password you setup for the SSH account on the cluster. This will forward the Dask dashboard bokeh app to the compute instance. You can access it at `https://{compute_instance}-8788.{region}.instances.azureml.net/status`. For example, with my compute instance named `dask-instance` in region `northcentralus` the link https://dask-instance-8788.northcentralus.instances.azureml.net/status works.
 
+![Dask dashboard](dask-dashboard.png)
+
 ## Getting data
 
 Let's get some data.
