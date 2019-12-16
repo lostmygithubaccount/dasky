@@ -12,13 +12,15 @@ First, let's setup the Azure ML cluster. It is recommended to use `STANDARD_DS12
 
 ![Cluster setup](media/cluster-setup.png)
 
-Next, let's setup the compute instance. Since this compute will not be doing much work, any size machine is fine. Again, make sure to place it in the same virtual network as the cluster. This will take a few minutes to create and setup. ![Instance setup](media/instance-setup.png)
+Next, let's setup the compute instance. Since this compute will not be doing much work, any size machine is fine. Again, make sure to place it in the same virtual network as the cluster. This will take a few minutes to create and setup. 
+
+![Instance setup](media/instance-setup.png)
 
 If using JupyterLab, click on the button to clone a git repo. The repo we will clone is hosted at https://github.com/lostmygithubaccount/dask-examples.git. Copy this link and clone the repo. 
 
 ![Launch jupyter](media/launch-jupyter.png)
 
-Once ready, you will have a link to open Jupyter or JupyterLab (recommended). Click one of the links.
+Once ready, you will have a link to open JupyterLab (recommended) or Jupyter. Click one of the links.
 
 ![Clone examples](media/clone-examples.jpg)
 
@@ -26,7 +28,7 @@ Open up `StartDask.ipynb`.
 
 ## Setup cluster
 
-In a notebook:
+The following code will import Azure ML dependencies for connecting to a workspace, creating an experiment, and setting up a run. If you are unfamiliar with these terms, please visit [the documentation](https://docs.microsoft.com/en-us/azure/machine-learning/service/concept-azure-machine-learning-architecture#workspaces).
 
 ```python
 from azureml.core import Workspace, Experiment
@@ -50,11 +52,13 @@ run = Experiment(ws, 'dask').submit(est)
 RunDetails(run).show()
 ```
 
+A widget will appear showing the status of the run. It may take a few minutes for the cluster to scale up, set up, and be ready for use. When ready, you'll see `headnode`, `cluster`, and others logged to the run. At this point, the cluster is ready to use.  
+
 ![Start run](media/start-run.png)
 
 ## Connect to cluster
 
-Start the cluster
+To connect to the cluster, simply setup a Dask client connecting to the headnode we logged. Since we are in the same virtual network, no port forwarding or other setup is needed. 
 
 ```python
 from dask.distributed import Client
@@ -63,17 +67,19 @@ c = Client(f'tcp://{headnode}:8786)
 c
 ```
 
-Optionally, run the output of the following in a terminal on the compute instance:
+![Start cluster](media/start-cluster.png)
+
+Wow, a cluster with 2.3 TB of memory and 320 cores!!! This is where the fun begins.
+
+## Connect to the dask dashboard
+
+However, to access the Dask dashboard, we do need to establish port forwarding from the headnode to the compute instance. To do this (highly recommended), you can run the output of the following in a terminal on the compute instance:
 
 ```python
 print(f'ssh daskuser@{headnode} -L 8788:{headnode}:8787')
 ```
 
 You will need the password you setup for the SSH account on the cluster. This will forward the Dask dashboard bokeh app to the compute instance. You can access it at `https://{compute_instance}-8788.{region}.instances.azureml.net/status`. For example, with my compute instance named `dask-instance` in region `northcentralus` the link https://dask-instance-8788.northcentralus.instances.azureml.net/status works.
-
-![Start cluster](media/start-cluster.png)
-
-Wow, a cluster with 2.3 TB of memory and 320 cores!!! This is where the fun begins.
 
 ## Getting data
 
