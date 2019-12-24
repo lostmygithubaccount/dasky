@@ -29,7 +29,6 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--datastore")
-    parser.add_argument("--dataset_name", default=False)
     parser.add_argument("--jupyter", default=False)
     parser.add_argument("--jupyter_token", default=uuid.uuid1().hex)
     parser.add_argument("--script")
@@ -66,12 +65,6 @@ if __name__ == '__main__':
         Run.get_context().log('scheduler', scheduler) 
         Run.get_context().log('dashboard', dashboard)
         Run.get_context().log('datastore', args.datastore)
-        
-        ## TO REMOVE 
-        if args.dataset_name:
-            ds = Run.get_context().experiment.workspace.datasets[ds]
-            ctx = ds.mount()
-            ctx.start()
         
         if args.jupyter:
 
