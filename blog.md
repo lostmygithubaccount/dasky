@@ -42,8 +42,25 @@ If using JupyterLab, click on the button to clone a git repo. The repo we will c
 
 Open up `StartDask.ipynb`. 
 
+## Overview of assets 
+
+First, we create an Azure ML VM pool, or "Training cluster". You can see this in the studio.
+
+![Cluster details](media/cluster-details.png)
+
+Then, we create an Azure ML Dataset from an Azure Open Dataset. You can see this in the studio. 
+
+![Dataset details](media/dataset-details.png)
+
+Then, we create an Experiment and submit a Run to it. 
+
+![Experiment overview](media/exp-overview.png)
+
+![Run overview](media/run-overview.png)
 
 ## Exploring the data
+
+![MP4 Test](media/describe2.mp4)
 
 ## Preparing the data 
 
