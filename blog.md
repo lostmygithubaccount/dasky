@@ -23,7 +23,7 @@ In the git repo associated with this blog, the VNET is assumed to be in the same
 
 Create an Azure ML Compute Instance in the VNET you have created. The Virtual Machine (VM) size is unimportant for this blog as it is simply being used as an interface to the Dask cluster and hosting code in the cloud. 
 
-Enabling SSH access is not required for this blog. 
+Enabling SSH access is optional.
 
 ![Compute instance setup](media/ci-setup.png)
 
@@ -48,11 +48,13 @@ You can use the terminal or UI to clone the repo, hosted at https://github.com/l
 
 ## Overview of repository 
 
-Open up `StartDask.ipynb`. 
+Open up `DaskyAzureML.ipynb`. Start the run. This will take a few minutes, depending on whether a new image needs to be built and other factors. You can read through the overview of what the setup incurs below while waiting for the cluster to setup. 
+
+![Run widget ready](media/run-widget-ready.png)
 
 ## Overview of assets 
 
-First, we create an Azure ML VM pool, or "Training cluster". You can see this in the studio.
+First, we create an Azure ML VM pool, or "Training cluster". You can see this in the studio. This pool will scale between 0 and 100 nodes as jobs are submitted to it. 
 
 ![Cluster details](media/cluster-details.png)
 
@@ -64,14 +66,13 @@ Then, we create an Experiment and submit a Run to it.
 
 ![Experiment overview](media/exp-overview.png)
 
+In the run, we can see details and metrics/other assets logged to the run.
+
 ![Run overview](media/run-overview.png)
 
-Wait a bit.
-
-![Run widget ready](media/run-widget-ready.png)
+Wait until the cluster is setup before proceeding. The run will be in the 'Running' state and information about the cluster (headnode, scheduler, etc.) will be logged as metrics to the run. These can be seen either in the Jupyter widget or the Azure ML studio.
 
 ![Run studio ready](media/run-studio-ready.png)
-
 
 ## Connect to the cluster
 
