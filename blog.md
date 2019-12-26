@@ -58,13 +58,18 @@ Then, we create an Experiment and submit a Run to it.
 
 ![Run overview](media/run-overview.png)
 
+## Connect to the cluster
+
+Connect to the cluster through the Dask Client. 
+
+![Notebook cluster](media/notebook0.png)
+
 ## Exploring the data
 
 ![Len gif](media/len.gif)
 
 ![Describe gif](media/describe.gif)
 
-![Dataset details](media/dataset-details.png)
 
 ## Preparing the data 
 
