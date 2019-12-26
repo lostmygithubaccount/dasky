@@ -24,9 +24,9 @@ In the git repo associated with this blog, the VNET is assumed to be in the same
 
 ![Compute instance setup](media/ci-setup.png)
 
-
 ## Launch JupyterLab or Jupyter
 
+![Compute instance URIs](media/ci-jupyterlab.png)
 
 ## Clone git repo
 If using JupyterLab, click on the button to clone a git repo. The repo we will clone is hosted at https://github.com/lostmygithubaccount/dask-examples.git. Copy this link and clone the repo. 
