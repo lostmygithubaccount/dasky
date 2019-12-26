@@ -106,10 +106,15 @@ We can use Dask's persist method to cache the dataframe in RAM rather than stora
 
 In the screenshot above, we also describe the dataframe, yielding a profile of the dataset computed on numerical columns. 
 
-![Notebook EDA 2](media/notebook2.png)
-
+In my case, this took about 2.5 minutes. The below gif shows the Dask dashboard during some of this.
 
 ![Describe gif](media/describe.gif)
+
+It might be useful to visualize the data over time. There are about 12 years of data. Let's average over each day and plot. 
+
+![Notebook EDA 2](media/notebook2.png)
+
+Optionally, I can log my plot to the run. Then, it can be viewed in the studio later or downloaded from the run object. 
 
 ![Run image](media/run-images.png)
 
