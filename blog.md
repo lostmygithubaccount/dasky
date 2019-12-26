@@ -80,15 +80,34 @@ Connect to the cluster through the Dask Client.
 
 ![Notebook cluster](media/notebook0.png)
 
+We created a Dask cluster with 40 workers, 320 cores, and 2.36 TB of RAM. 
+
+Make sure to copy/paste the dashboard url into your browser. It is recommended to run the Dask code with the dashboard open on the side to understand what is happening, especially in long running operations.
+
 ![Dashboard Startup](media/dashboard-overview.png)
 
 ## Exploring the data
 
+Let's do some basic exploratory data analysis (EDA). First, let's find out how many records there are by simple calling `len(df)`. In my case, this took under 8 seconds to calculate there are 1.39 billion rows. The time to compute will vary based on your cluster, and the number of records will increase over time in the Open Dataset. 
+
+In the dashboard, we can see what is happening behind the scenes. Dask is finding the length of each partition of the data, calulcating the `len` of that parition, then aggregating to compute the overall length. 
+
+![Len gif](media/len.gif)
+
+The graph is fairly simple.
+
+![Len graph](media/len-graph.png)
+
+This particular dataset is paritioned by year and month. As of writing, there are 144 partitions. 
+
+We can use Dask's persist method to cache the dataframe in RAM rather than storage disks. This is analogous to Spark/tensorflow/etc... With the dataframe partioned, the `len` call can now be performed in a fraction of the time.
+
 ![Notebook EDA 1](media/notebook1.png)
+
+In the screenshot above, we also describe the dataframe, yielding a profile of the dataset computed on numerical columns. 
 
 ![Notebook EDA 2](media/notebook2.png)
 
-![Len gif](media/len.gif)
 
 ![Describe gif](media/describe.gif)
 
