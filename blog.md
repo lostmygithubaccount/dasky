@@ -64,7 +64,7 @@ Then, we create an Experiment and submit a Run to it.
 
 ![Describe gif](media/describe.gif)
 
-![Dataset details](media/dataset-details.gif)
+![Dataset details](media/dataset-details.png)
 
 ## Preparing the data 
 
