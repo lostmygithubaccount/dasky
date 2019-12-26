@@ -58,18 +58,32 @@ Then, we create an Experiment and submit a Run to it.
 
 ![Run overview](media/run-overview.png)
 
+Wait a bit.
+
+![Run widget ready](media/run-widget-ready.png)
+
+![Run studio ready](media/run-studio-ready.png)
+
+
 ## Connect to the cluster
 
 Connect to the cluster through the Dask Client. 
 
 ![Notebook cluster](media/notebook0.png)
 
+![Dashboard Startup](media/dashboard-overview.png)
+
 ## Exploring the data
+
+![Notebook EDA 1](media/notebook1.png)
+
+![Notebook EDA 2](media/notebook2.png)
 
 ![Len gif](media/len.gif)
 
 ![Describe gif](media/describe.gif)
 
+![Run image](media/run-images.png)
 
 ## Preparing the data 
 
