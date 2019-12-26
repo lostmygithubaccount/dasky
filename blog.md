@@ -60,7 +60,11 @@ Then, we create an Experiment and submit a Run to it.
 
 ## Exploring the data
 
-![MP4 Test](media/describe.gif)
+![Len gif](media/len.gif)
+
+![Describe gif](media/describe.gif)
+
+![Dataset details](media/dataset-details.gif)
 
 ## Preparing the data 
 
