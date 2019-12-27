@@ -1,13 +1,4 @@
-# Fun with Azure ML and Dask 
-
-## Titles under consideration
-
-Stashing titles here. Keep thinking of good ones and forgetting them. 
-
-* Terabyte-scale data preparation using dask
-* Fun with Azure ML and Dask
-* Terabyte-scale data preparation using Pandas (sorta...)
-* Scale up Pandas and Scikit-Learn with Dask and Azure ML
+# Blog
 
 ## Introduction
 
@@ -124,4 +115,3 @@ Optionally, I can log my plot to the run. Then, it can be viewed in the studio l
 
 ## Conclusion 
 
-## Troubleshooting 
