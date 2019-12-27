@@ -4,6 +4,8 @@
 
 blah blah blah
 
+![Summary gif](media/describe.gif)
+
 ## Create a virtual network 
 
 Create (or use an existing) virtual network. Both the interface for the Dask cluster and the cluster itself will be in the virtual network. You can quickly create one in the [Azure Portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal) or [Azure CLI](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-cli) if you do not have one already.
