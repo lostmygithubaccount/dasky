@@ -2,15 +2,13 @@
 
 ## Introduction
 
-blah blah blah
-
 ![Summary gif](media/describe3.gif)
 
 ## Create a virtual network 
 
 Create (or use an existing) virtual network. Both the interface for the Dask cluster and the cluster itself will be in the virtual network. You can quickly create one in the [Azure Portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal) or [Azure CLI](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-cli) if you do not have one already.
 
-In the git repo associated with this blog, the VNET is assumed to be in the same resource group as the workspace with a name 'dask-vnet' and subnet 'default'. 
+In the `example.ipynb` notebook, the VNET is assumed to be in the same resource group as the workspace with a name 'dask-vnet' and subnet 'default'. 
 
 ## Create and setup compute instance 
 
