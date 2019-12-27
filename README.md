@@ -1,4 +1,4 @@
-# Azure ML and Dask for scale 
+# Azure ML and Dask 
 
 ## Introduction
 
