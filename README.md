@@ -4,7 +4,7 @@
 
 blah blah blah
 
-![Summary gif](media/describe.gif)
+![Summary gif](media/describe3.gif)
 
 ## Create a virtual network 
 
@@ -101,7 +101,7 @@ In the screenshot above, we also describe the dataframe, yielding a profile of t
 
 In my case, this took about 2.5 minutes. The below gif shows the Dask dashboard during some of this.
 
-![Describe gif](media/describe.gif)
+![Describe gif](media/describe3.gif)
 
 It might be useful to visualize the data over time. There are about 12 years of data. Let's average over each day and plot. 
 
