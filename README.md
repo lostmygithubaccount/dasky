@@ -28,7 +28,7 @@ Launch JupyterLab (recommended) or Jupyter from the list of URIs.
 
 Clone the Azure ML and Dask example repo from github. 
 
-You can use the terminal or UI to clone the repo, hosted at https://github.com/lostmygithubaccount/dask-examples.git. Copy this link and clone the repo.
+You can use the terminal or UI to clone the repo, hosted at https://github.com/lostmygithubaccount/dasky.git. Copy this link and clone the repo.
 
 ![Compute instance git setup](media/ci-git-setup.png)
 
@@ -36,10 +36,9 @@ You can use the terminal or UI to clone the repo, hosted at https://github.com/l
 
 ![Compute instance git repo](media/ci-git-repo.png)
 
-
 ## Overview of repository 
 
-Open up `DaskyAzureML.ipynb`. Start the run. This will take a few minutes, depending on whether a new image needs to be built and other factors. You can read through the overview of what the setup incurs below while waiting for the cluster to setup. 
+Open up `example.ipynb`. Start the run. This will take a few minutes, depending on whether a new image needs to be built and other factors. You can read through the overview of what the setup incurs below while waiting for the cluster to setup. 
 
 ![Run widget ready](media/run-widget-ready.png)
 
