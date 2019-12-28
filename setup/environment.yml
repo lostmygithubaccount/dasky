@@ -26,7 +26,6 @@ dependencies:
   - graphviz
   - pip
   - fastparquet
-  - pyarrow
   - dask-ml
   - pip:
     - graphviz 
@@ -34,3 +33,4 @@ dependencies:
     - azureml-sdk[notebooks]
     - azureml-opendatasets
     - mpi4py
+    - pyarrow>=15.0.1
