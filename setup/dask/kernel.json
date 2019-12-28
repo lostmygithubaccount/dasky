@@ -1,0 +1,11 @@
+{
+ "argv": [
+  "/anaconda/envs/dask/bin/python",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "Python (dask)",
+ "language": "python"
+}
