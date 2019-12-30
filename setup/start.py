@@ -1,15 +1,15 @@
-### Imports
-from mpi4py import MPI
+# Imports 
 import os
-import argparse
+import sys
+import uuid
 import time
-from dask.distributed import Client
-from azureml.core import Run
-import sys, uuid
+import socket
+import argparse
 import threading
 import subprocess
-import socket
 
+from mpi4py import MPI
+from azureml.core import Run
 from notebook.notebookapp import list_running_servers
 
 def flush(proc, proc_log):
@@ -51,10 +51,9 @@ if __name__ == '__main__':
     data = comm.bcast(data, root=0)
     scheduler = data["scheduler"]
     dashboard = data["dashboard"]
+
     print("- scheduler is ", scheduler)
     print("- dashboard is ", dashboard)
-    
-
     print("args: ", args)
     print("unparsed: ", unparsed)
     print("- my rank is ", rank)
