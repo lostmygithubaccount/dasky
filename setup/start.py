@@ -66,7 +66,6 @@ if __name__ == '__main__':
         Run.get_context().log('datastore', args.datastore)
         
         if args.jupyter:
-
             cmd = ("jupyter lab --ip 0.0.0.0 --port 8888" + \
                               " --NotebookApp.token={token}" + \
                               " --allow-root --no-browser").format(token=args.jupyter_token)
