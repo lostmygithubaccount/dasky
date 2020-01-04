@@ -2,7 +2,7 @@
 
 ## Introduction
 
-![Summary gif](media/describe3.gif)
+![Summary gif](media/describe5.gif)
 
 ## Create a virtual network 
 
