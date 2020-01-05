@@ -2,7 +2,9 @@
 
 ## Introduction
 
-![Summary gif](media/describe5.gif)
+![Summary gif](media/describe6.gif)
+
+**this needs to be updated**
 
 ## Create a virtual network 
 
@@ -12,7 +14,7 @@ In the `example.ipynb` notebook, the vNET is assumed to be in the same resource 
 
 ## Create and setup compute instance 
 
-Create an Azure ML Compute Instance in the vNET you have created. The Virtual Machine (VM) size is unimportant for this blog as it is simply being used as an interface to the Dask cluster and hosting code in the cloud. 
+Create an Azure ML Compute Instance in the vNET you have created.
 
 Enabling SSH access is optional.
 
@@ -35,15 +37,3 @@ You can use the terminal or UI to clone the repo, hosted at https://github.com/l
 ![Compute instance git clone](media/ci-git-clone.png)
 
 ![Compute instance git repo](media/ci-git-repo.png)
-
-## Overview of repository 
-
-![Run widget ready](media/run-widget-ready.png)
-
-## Data analysis with Pandas
-
-## Scaling up with Dask
-
-## Scaling up with Dask and Azure ML
-
-## Overview of assets 
