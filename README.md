@@ -2,7 +2,7 @@
 
 ## Introduction
 
-![Summary gif](media/describe6.gif)
+![Summary gif](media/describe.gif)
 
 **this needs to be updated**
 
@@ -18,22 +18,22 @@ Create an Azure ML Compute Instance in the vNET you have created.
 
 Enabling SSH access is optional.
 
-![Compute instance setup](media/ci-setup.png)
+![Compute instance creation](media/instance-create.png)
 
 ## Launch JupyterLab or Jupyter
 
 Launch JupyterLab (recommended) or Jupyter from the list of URIs. 
 
-![Compute instance URIs](media/ci-jupyterlab.png)
+![Compute instance URIs](media/instance-launch.png)
 
 ## Clone git repo
 
-Clone the Azure ML and Dask example repo from github. 
+Navigate to a directory of your choice and clone repo from github. 
 
 You can use the terminal or UI to clone the repo, hosted at https://github.com/lostmygithubaccount/dasky.git. Copy this link and clone the repo.
 
-![Compute instance git setup](media/ci-git-setup.png)
+![Compute instance github](media/instance-github.png)
 
-![Compute instance git clone](media/ci-git-clone.png)
+## Overview of repository
 
-![Compute instance git repo](media/ci-git-repo.png)
+![Compute instance repo](media/instance-repo.png)
