@@ -42,6 +42,6 @@ You can use the terminal or UI to clone https://github.com/lostmygithubaccount/d
 
 ## Repository overview
 
-![Compute instance repo](media/instance-repo.png)
+![Compute instance repo](media/repo-overview.png)
 
 
