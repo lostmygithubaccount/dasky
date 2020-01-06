@@ -34,7 +34,7 @@ Launch JupyterLab (recommended) or Jupyter from the list of URIs.
 
 ![Compute instance URIs](media/instance-launch.png)
 
-## Clone git repo
+## Clone repository
 
 Navigate to a directory of your choice and clone repo from github. 
 
