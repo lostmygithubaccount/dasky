@@ -24,7 +24,9 @@ In the `example.ipynb` notebook, the vNET is assumed to be in the same resource 
 
 Create an Azure ML Compute Instance in the vNET you have created.
 
-**Important**: Your workspace must be in *North Central US* or *UK South* due to Compute Instance availability. 
+**Important**: Your workspace must be in *North Central US* or *UK South* due to Compute Instance availability.
+
+**Important**: The size of your compute instance will affect the amount of data you can run on 'locally' with Dask. I find a `STANDARD_DS15_V2` works well for ~1 year of data, while a `STANDARD_NC24` works well for ~2 years of data.
 
 Enabling SSH access is optional.
 
