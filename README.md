@@ -1,8 +1,10 @@
 # Azure ML and Dask 
 
+![Summary gif](media/describe.gif)
+
 ## Introduction
 
-![Summary gif](media/describe.gif)
+Dask is awesome. Azure ML is cool too. 
 
 ## Create a virtual network 
 
