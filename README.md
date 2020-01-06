@@ -6,6 +6,16 @@
 
 Dask is awesome. Azure ML is cool too. 
 
+## Data overview
+
+The data is hosted at https://data4dask.dfs.core.windows.net/datasets/noaa/isd. It is a copy of the [NOAA Integrated Surface Data (ISD)](https://azure.microsoft.com/services/open-datasets/catalog/noaa-integrated-surface-data/) moved from [Azure Open Dataset](https://azure.microsoft.com/services/open-datasets/catalog/) to a ADLS Gen 2 filesystem for distributed processing. 
+
+Expanded in memory, the full dataset is ~660 GB. It is stored in compressed parquet files in a blob container partitioned by year and month. The dataset is **not** updated in the ADLS Gen 2 storage account, but is in the Azure Open Dataset. Compressed, the files for the dataset are ~8 GB. Uncompressed, the files for the dataset are ~150-200 GB.  
+
+Specific years and months can be specified by `year=*/month=*/part-*.snappy.parquet`. 
+
+The data begins January 1, 2008 and ends on January 1, 2019 and contains 1 file per month. Each file can contain ~5 GB of data when in a dataframe in memory. Compressed, each file is roughly 50 MB. Uncompressed, each file is roughly 1 GB. 
+
 ## Create a virtual network 
 
 Create or use an existing virtual network (vNET). Both the interface for the Dask cluster and the cluster itself will be in the virtual network. You can quickly create one in the [Azure Portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal) or [Azure CLI](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-cli) if you do not have one already.
@@ -38,6 +48,4 @@ You can use the terminal or UI to clone the repo, hosted at https://github.com/l
 
 ![Compute instance repo](media/instance-repo.png)
 
-## Data overview
 
-The data is hosted at https://data4dask.dfs.core.windows.net/datasets/noaa. It is a copy of an Azure Open Dataset moved to a ADLS Gen 2 filesystem for distributed processing. 
