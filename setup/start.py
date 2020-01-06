@@ -103,7 +103,9 @@ if __name__ == '__main__':
             scheduler_proc.kill()
             worker_proc.kill()
             if exit_code:
-                Run.get_context().cancel():
+                Run.get_context().cancel()
+            else:
+                Run.get_context().complete()
             exit(exit_code)
         else:
             flush(scheduler_proc, scheduler_log)
