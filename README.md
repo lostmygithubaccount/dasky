@@ -34,6 +34,10 @@ You can use the terminal or UI to clone the repo, hosted at https://github.com/l
 
 ![Compute instance github](media/instance-github.png)
 
-## Overview of repository
+## Repository overview
 
 ![Compute instance repo](media/instance-repo.png)
+
+## Data overview
+
+The data is hosted at https://data4dask.dfs.core.windows.net/datasets/noaa. It is a copy of an Azure Open Dataset moved to a ADLS Gen 2 filesystem for distributed processing. 
