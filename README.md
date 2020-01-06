@@ -24,6 +24,8 @@ In the `example.ipynb` notebook, the vNET is assumed to be in the same resource 
 
 Create an Azure ML Compute Instance in the vNET you have created.
 
+**Important**: Your workspace must be in *North Central US* or *UK South* due to Compute Instance availability. 
+
 Enabling SSH access is optional.
 
 ![Compute instance creation](media/instance-create.png)
