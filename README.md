@@ -12,9 +12,7 @@ The data is hosted at https://data4dask.dfs.core.windows.net/datasets/noaa/isd. 
 
 Expanded in memory, the full dataset is ~660 GB. It is stored in compressed parquet files in a blob container partitioned by year and month. The dataset is **not** updated in the ADLS Gen 2 storage account, but is in the Azure Open Dataset. Compressed, the files for the dataset are ~8 GB. Uncompressed, the files for the dataset are ~150-200 GB.  
 
-Specific years and months can be specified by `year=*/month=*/part-*.snappy.parquet`. 
-
-The data begins January 1, 2008 and ends on January 1, 2019 and contains 1 file per month. Each file can contain ~5 GB of data when in a dataframe in memory. Compressed, each file is roughly 50 MB. Uncompressed, each file is roughly 1 GB. 
+The parition format is `year=*/month=*/part-*.snappy.parquet` with 1 file per month. Each file can contain ~5 GB of data when in a dataframe in memory. Compressed, each file is ~50 MB. Uncompressed, each file is ~1 GB. 
 
 ## Create a virtual network 
 
