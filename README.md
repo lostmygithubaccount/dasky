@@ -36,9 +36,7 @@ Launch JupyterLab (recommended) or Jupyter from the list of URIs.
 
 ## Clone repository
 
-Navigate to a directory of your choice and clone repo from github. 
-
-You can use the terminal or UI to clone the repo, hosted at https://github.com/lostmygithubaccount/dasky.git. Copy this link and clone the repo.
+You can use the terminal or UI to clone https://github.com/lostmygithubaccount/dasky.git.
 
 ![Compute instance github](media/instance-github.png)
 
