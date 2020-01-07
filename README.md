@@ -1,4 +1,4 @@
-**Forked from** https://github.com/danielsc/azureml-and-dask
+stolen from previous work at https://github.com/danielsc/azureml-and-dask
 
 # Azure ML and Dask 
 
