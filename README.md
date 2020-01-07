@@ -32,6 +32,8 @@ Create an Azure ML Compute Instance in the vNET you have created.
 
 **Important**: Enabling SSH access is optional and not recommended for the example, despite the misleading screenshot below.
 
+**Important**: With default subscription quotas, you will not be able to run the notebook as-is. Check your subscription's quota in the region and calculate the maximum size cluster you can use. The default cluster created in this notebook is about the minimum needed to work with the data very quickly, but smaller clusters will work. Do not persist the dataframe on smaller clusters, this will harm performance.
+
 ![Compute instance creation](media/instance-create.png)
 
 ## Launch JupyterLab or Jupyter
