@@ -16,6 +16,8 @@ Expanded in a dataframe in memory, the full dataset is ~660 GB. It is stored in 
 
 The parition format is `year=*/month=*/part-*.snappy.parquet` with 1 file per month. Each file can contain ~5 GB of data when in a dataframe in memory. Compressed, each file is ~50 MB. Uncompressed, each file is ~1 GB. 
 
+The compressed data is used at all points in this example - but uncompressed data is more typical and included for comparison.
+
 ## Create a virtual network 
 
 Create or use an existing virtual network (vNET). Both the interface for the Dask cluster and the cluster itself will be in the virtual network. You can quickly create one in the [Azure Portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal) or [Azure CLI](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-cli) if you do not have one already.
