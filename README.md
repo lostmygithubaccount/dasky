@@ -10,7 +10,7 @@ Dask is awesome. Azure ML is cool too.
 
 ## Data overview
 
-The data is hosted at https://data4dask.dfs.core.windows.net/datasets/noaa/isd. It is a copy of the [NOAA Integrated Surface Data (ISD)](https://azure.microsoft.com/services/open-datasets/catalog/noaa-integrated-surface-data/) moved from [Azure Open Dataset](https://azure.microsoft.com/services/open-datasets/catalog/) to a ADLS Gen 2 filesystem for distributed processing. 
+The data is hosted at https://data4dask.dfs.core.windows.net/datasets/noaa/isd. It is a copy of the [NOAA Integrated Surface Data (ISD)](https://azure.microsoft.com/services/open-datasets/catalog/noaa-integrated-surface-data/) moved from [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/) to an ADLS Gen 2 filesystem for distributed processing. 
 
 Expanded in a dataframe in memory, the full dataset is ~660 GB. It is stored in compressed parquet files partitioned by year and month. The dataset is **not** updated in the ADLS Gen 2 storage account, but is in the Azure Open Dataset. Compressed, the files for the dataset are ~8 GB. Uncompressed, the files for the dataset are ~150-200 GB.  
 
