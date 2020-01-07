@@ -30,7 +30,7 @@ Create an Azure ML Compute Instance in the vNET you have created.
 
 **Important**: The size of your Compute Instance will affect the amount of data you can run on 'locally' with Dask. I find a `STANDARD_DS15_V2` works well for ~1 year of data, while a `STANDARD_NC24` works well for ~2 years of data. Adjust the size of data in the notebook as needed for your VM size. In this example, using a GPU machine is wasteful since we are not using the GPUs. However, Dask can be configured to use GPUs. An example of this is currently a work in progress.
 
-**Important**: Enabling SSH access is optional and not recommended for the example, despite the misleading screenshot below.
+**Important**: Enabling SSH access is optional and not recommended, despite the misleading screenshot below.
 
 **Warning**: With default subscription quotas, you will not be able to run the notebook as-is. Check your subscription's quota in the region and calculate the maximum size cluster you can use. The default cluster created in this notebook is about the minimum needed to work with the data very quickly without repartitioning the data, but smaller clusters will work. Do not persist the dataframe on smaller clusters, this will harm performance.
 
