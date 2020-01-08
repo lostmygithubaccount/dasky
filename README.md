@@ -22,7 +22,7 @@ The compressed data is used at all points in this example - but uncompressed dat
 
 Create or use an existing virtual network (vNET). Both the interface for the Dask cluster and the cluster itself will be in the virtual network. You can quickly create one in the [Azure Portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal) or [Azure CLI](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-cli) if you do not have one already.
 
-In the `example.ipynb` notebook, the vNET is assumed to be in the same resource group as the workspace with a name 'dialup-network' and subnet 'default'. 
+**Warning**: You may need to change the vNET resource group and name in the cluster configuration step.
 
 ## Create and setup compute instance 
 
