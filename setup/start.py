@@ -102,7 +102,6 @@ if __name__ == '__main__':
             jupyter_proc.kill() if args.jupyter else 0
             scheduler_proc.kill()
             worker_proc.kill()
-            exit(0)
         else:
             flush(scheduler_proc, scheduler_log)
     else:
