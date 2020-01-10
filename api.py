@@ -12,6 +12,7 @@ env = ws.environments['AzureML-Dask'] # curated environment
 cluster = AMLCluster(ct) # only required input
 
 cluster = AMLCluster(ct,
+        experiment=None # experiment name - default to 'dask-interactive'
         jupyter=True, # start Jupyter Lab on headnode
         jupyter_token=None, # set custom Jupyter token
         datastore_mount='workspacefiledatastore', # default to default file datastore; for code consistency
