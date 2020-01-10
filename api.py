@@ -31,4 +31,8 @@ cluster = AMLCluster(
 
 cluster.print_jupyter_uri() # print link w/token to Jupyter Lab session
 
+cluster.print_jupyter_uri() # print link w/ token to Jupyter Lab session
+cluster.logs() # returns logs
+cluster.scale(n=10) # scale to n nodes 
+
 c = Client(cluster) # returns standard Client output - dashboard link + # of nodes, workers, etc.
