@@ -20,10 +20,6 @@ cluster = AMLCluster(ct,
         env=None, # default to 'AzureML-Dask'
         )
 
-cluster.print_jupyter_into() # print link w/ token to Jupyter Lab session
+cluster.print_jupyter_uri() # print link w/ token to Jupyter Lab session
 
 c = Client(cluster) # returns standard Client output - dashboard link + # of nodes, workers, etc.
-        
-
-
-
