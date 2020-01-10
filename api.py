@@ -29,8 +29,6 @@ cluster = AMLCluster(
     , env=None # default to 'AzureML-Dask'
         )
 
-cluster.print_jupyter_uri() # print link w/token to Jupyter Lab session
-
 cluster.print_jupyter_uri() # print link w/ token to Jupyter Lab session
 cluster.logs() # returns logs
 cluster.scale(n=10) # scale to n nodes 
