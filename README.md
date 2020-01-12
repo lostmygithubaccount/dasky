@@ -3,6 +3,7 @@ forked from https://github.com/danielsc/azureml-and-dask
 # Azure ML and Dask 
 
 ![Summary gif](media/describe.gif)
+![Write gif](media/write.gif)
 
 ## Introduction
 
