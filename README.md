@@ -48,9 +48,3 @@ Launch JupyterLab (recommended) or Jupyter from the list of URIs.
 You can use the terminal or UI to clone https://github.com/lostmygithubaccount/dasky.git.
 
 ![Compute instance github](media/instance-github.png)
-
-## Repository overview
-
-![Compute instance repo](media/repo-overview.png)
-
-
