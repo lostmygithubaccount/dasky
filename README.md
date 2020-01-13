@@ -29,7 +29,7 @@ Create or use an existing virtual network (vNET). Both the interface for the Das
 
 Create an Azure ML Compute Instance in the vNET you have created.
 
-**Important**: Your workspace must be in *North Central US* or *UK South* due to Compute Instance availability.
+**Important**: Your workspace must be in *North Central US* or *UK South* due to Compute Instance availability. They will be available in all regions in early February. 
 
 **Important**: The size of your Compute Instance will affect the amount of data you can run on 'locally' with Dask. I find a `STANDARD_DS15_V2` works well for ~1 year of data, while a `STANDARD_NC24` works well for ~2 years of data. Adjust the size of data in the notebook as needed for your VM size. In this example, using a GPU machine is wasteful since we are not using the GPUs. Dask can be configured to use GPUs - an example of this is "in progress". 
 
