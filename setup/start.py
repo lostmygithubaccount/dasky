@@ -29,7 +29,8 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--jupyter", default=False)
-    parser.add_argument("--datastore", default=None)
+    parser.add_argument("--code_store", default=None)
+    parser.add_argument("--data_store", default=None)
     parser.add_argument("--jupyter_token", default=uuid.uuid1().hex)
     parser.add_argument("--script")
 
@@ -44,9 +45,10 @@ if __name__ == '__main__':
         data = {
             "scheduler"  : ip + ":8786",
             "dashboard"  : ip + ":8787",
-            "jupyter"    : ip + ":8888",
+            "jupyter"    : ip + ":9999",
             "token"      : args.jupyter_token,
-            "datastore"  : args.datastore
+            "codestore"  : args.code_store,
+            "datastore"  : args.data_store
             }
     else:
         data = None
@@ -55,6 +57,7 @@ if __name__ == '__main__':
     scheduler = data["scheduler"]
     dashboard = data["dashboard"]
     jupyter   = data["jupyter"]
+    codestore = data["codestore"]
     datastore = data["datastore"]
     token     = data["token"]
 
@@ -71,12 +74,13 @@ if __name__ == '__main__':
         Run.get_context().log('dashboard', dashboard)
         Run.get_context().log('jupyter', jupyter)
         Run.get_context().log('token', token)
-
-        Run.get_context().log('datastore', args.datastore)
+        Run.get_context().log('codestore', codestore)
+        Run.get_context().log('datastore', datastore)
         
         if args.jupyter:
-            cmd = ( f'jupyter lab --ip 0.0.0.0 --port 8888'   + \
-                              f' --NotebookApp.token={token}' + \
+            cmd = (f' jupyter lab --ip 0.0.0.0 --port 9999'      + \
+                              f' --NotebookApp.token={token}'    + \
+                              f' --notebook-dir={codestore}/..'  + \
                               f' --allow-root --no-browser')
     
             jupyter_log = open("jupyter_log.txt", "a")
