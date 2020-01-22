@@ -99,7 +99,7 @@ if __name__ == '__main__':
         Run.get_context().log('datastore', datastore)
         
         if args.jupyter:
-            cmd = (f' jupyter lab --ip 0.0.0.0 --port 9999'      + \
+            cmd = (f' jupyter lab --ip 0.0.0.0 --port {jupyter_port}'      + \
                               f' --NotebookApp.token={token}'    + \
                               f' --notebook-dir={codestore}/..'  + \
                               f' --allow-root --no-browser')
