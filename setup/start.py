@@ -28,8 +28,8 @@ if __name__ == '__main__':
     rank = comm.Get_rank()
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--datastore")
     parser.add_argument("--jupyter", default=False)
+    parser.add_argument("--datastore", default=None)
     parser.add_argument("--jupyter_token", default=uuid.uuid1().hex)
     parser.add_argument("--script")
 
@@ -43,7 +43,10 @@ if __name__ == '__main__':
     if rank == 0:
         data = {
             "scheduler"  : ip + ":8786",
-            "dashboard"  : ip + ":8787"
+            "dashboard"  : ip + ":8787",
+            "jupyter"    : ip + ":8888",
+            "token"      : args.jupyter_token,
+            "datastore"  : args.datastore
             }
     else:
         data = None
@@ -51,6 +54,9 @@ if __name__ == '__main__':
     data = comm.bcast(data, root=0)
     scheduler = data["scheduler"]
     dashboard = data["dashboard"]
+    jupyter   = data["jupyter"]
+    datastore = data["datastore"]
+    token     = data["token"]
 
     print("- scheduler is ", scheduler)
     print("- dashboard is ", dashboard)
@@ -63,12 +69,15 @@ if __name__ == '__main__':
         Run.get_context().log('headnode', ip)
         Run.get_context().log('scheduler', scheduler) 
         Run.get_context().log('dashboard', dashboard)
+        Run.get_context().log('jupyter', jupyter)
+        Run.get_context().log('token', token)
+
         Run.get_context().log('datastore', args.datastore)
         
         if args.jupyter:
-            cmd = ("jupyter lab --ip 0.0.0.0 --port 8888" + \
-                              " --NotebookApp.token={token}" + \
-                              " --allow-root --no-browser").format(token=args.jupyter_token)
+            cmd = ( f'jupyter lab --ip 0.0.0.0 --port 8888'   + \
+                              f' --NotebookApp.token={token}' + \
+                              f' --allow-root --no-browser')
     
             jupyter_log = open("jupyter_log.txt", "a")
             jupyter_proc = subprocess.Popen(cmd.split(), universal_newlines=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
