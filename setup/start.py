@@ -99,9 +99,9 @@ if __name__ == '__main__':
         Run.get_context().log('datastore', datastore)
         
         if args.jupyter:
-            cmd = (f' jupyter lab --ip 0.0.0.0 --port {jupyter_port}' + \
-                              f' --NotebookApp.token={token}'         + \
-                              f' --notebook-dir={codestore}/..'       + \
+            cmd = (f' jupyter lab --ip 0.0.0.0 --port {args.jupyter_port}' + \
+                              f' --NotebookApp.token={token}'              + \
+                              f' --notebook-dir={codestore}/..'            + \
                               f' --allow-root --no-browser')
     
             jupyter_log = open("jupyter_log.txt", "a")
