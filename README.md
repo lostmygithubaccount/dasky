@@ -13,7 +13,7 @@ Dask + Azure ML = OSS Data Science & ML @ Scale.
 
 The data is a copy of the [NOAA Integrated Surface Data (ISD)](https://azure.microsoft.com/services/open-datasets/catalog/noaa-integrated-surface-data/) moved from [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/) to an ADLS Gen 2 filesystem for distributed processing. 
 
-It is stored in compressed parquet files and uncompressed CSV files which are ~8 GB and ~150 GB respectively. There are ~130 individual files. Loaded in a dataframe, the data occupies ~700 GB. 
+It is stored in compressed parquet files and uncompressed CSV files which are ~8 GB and ~150 GB respectively. There are ~130 individual files. Loaded in a dataframe, the data occupies ~700 GB. There are ~1.4 B rows.
 
 ## Create a virtual network 
 
