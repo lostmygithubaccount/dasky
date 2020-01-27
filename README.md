@@ -7,7 +7,7 @@ forked from https://github.com/danielsc/azureml-and-dask
 
 ## Introduction
 
-Dask + Azure ML = OSS Data Science @ Scale 
+Dask + Azure ML = OSS Data Science @ Scale.
 
 ## Data overview
 
