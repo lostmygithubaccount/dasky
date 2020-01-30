@@ -7,9 +7,13 @@ class AMLCluster:
         self.experiment_name=experiment_name
         self.use_existing_run=use_existing_run
         self.workers_list=[]
-        self.run=self.create_cluster()
+        self.run=None
+        self.dashboard_link=""
+        self.create_cluster()
         
-    def create_cluster(self):        
+    def create_cluster(self):  
+        if(self.node_count<=0): # throw exception here
+            raise ValueError('node_count is not valid')
         #set up environment
         if self.environment_name not in self.workspace.environments:
             env=Environment.from_existing_conda_environment(self.environment_name, 'azureml_py36')
@@ -20,34 +24,41 @@ class AMLCluster:
 
         #submit run
         exp = Experiment(self.workspace, self.experiment_name)
-        if self.use_existing_run==True: 
-            run = next(exp.get_runs())
-        else:
+        run=None
+        if self.use_existing_run==True: #find run with scheduler
+            runs=exp.get_runs()
+            try:
+                run=next(x for i,x in enumerate(runs) if ('scheduler' in x.get_metrics() and x.get_status() == 'Running'))
+            except StopIteration:
+                run=None
+                print("no exisitng run with scheduler.")
+        if not run:
+            print("Creating new run instance...")
             est = Estimator(
                 'setup',
                 compute_target=self.compute,
                 entry_script='start.py',
                 environment_definition=env,
                 script_params={'--datastore': self.workspace.get_default_datastore()},
-                node_count=self.node_count,
+                node_count=1, # start scheduler first
                 distributed_training=MpiConfiguration()
             )
             run = exp.submit(est)
+            print("waiting for scheduler ")
+            while run.get_status() != 'Canceled' and 'scheduler' not in run.get_metrics():
+                print('.', end ="")
+                time.sleep(5)
+            
+        self.run=run
+        self.scale(self.node_count-1) # create workers
 
-        return run
+        #return run
     
     def connect_cluster(self):
         if not self.run: 
             sys.exit("run doesn't exist.")
         dashboard_port=4242
 
-        print("waiting for scheduler node's ip")
-        while self.run.get_status()!='Canceled' and 'scheduler' not in self.run.get_metrics():
-            print('.', end ="")
-            time.sleep(5)
-            
-        print(self.run.get_metrics()["scheduler"])
-        
         if self.run.get_status() == 'Canceled':
             print('\nRun was canceled')
         else:
@@ -62,8 +73,19 @@ class AMLCluster:
         #get the dashboard link 
         dashboard_url = f'https://{socket.gethostname()}-{dashboard_port}.{self.workspace.get_details()["location"]}.instances.azureml.net/status'
         HTML(f'<a href="{dashboard_url}">Dashboard link</a>')
+        
+        self.dashboard_link=dashboard_url
 
         return c
+    
+    def scale(self, workers=1):
+        count=len(self.workers_list)
+        if count < workers:
+            self.scale_up(workers-count)
+        elif count > workers:
+            self.scale_down(count-workers)
+        else:
+            print("Number of workers: %s", workers)
     
     def scale_up(self, workers=1):
         for i in range(workers):
@@ -88,3 +110,28 @@ class AMLCluster:
                     child_run.cancel()
                 else:
                     print("All scaled workers are removed.")
+    
+    # close cluster
+    def close(self):
+        while self.workers_list:
+            child_run=self.workers_list.pop()
+            child_run.cancel()
+        if self.run:
+            self.run.cancel()
+        print("Scheduler and workers are disconnected.")
+        
+    # get run instance
+    def get_run(self):
+        return self.run
+    
+    # get dashboard link
+    def get_dashboard_link(self):
+        return self.dashboard_link
+    
+    # get jupyter_link
+    def get_jupyter_link(self):
+        print("under construction ... ")
+        
+    # get logs
+    def logs(self):
+        return self.run.get_all_logs()
