@@ -9,7 +9,7 @@ forked from https://github.com/danielsc/azureml-and-dask
 
 Dask + Azure ML = OSS Data Science & ML @ Scale.
 
-**Warning**: Currently, the demos in this repository will not run as-is. However with little modification, you can replicate them or replace with your own data in a ADLS storage account.
+**Warning**: Currently, the demos in this repository will not run as-is. However with little modification, you can replicate them or use with your own data in a ADLS storage account.
 
 ## Data overview
 
