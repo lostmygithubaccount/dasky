@@ -9,6 +9,8 @@ forked from https://github.com/danielsc/azureml-and-dask
 
 Dask + Azure ML = OSS Data Science & ML @ Scale.
 
+**Warning**: Currently, the demos in this repository will not run as-is. However with little modification, you can replicate them or replace with your own data in a ADLS storage account.
+
 ## Data overview
 
 The data is a copy of the [NOAA Integrated Surface Data (ISD)](https://azure.microsoft.com/services/open-datasets/catalog/noaa-integrated-surface-data/) moved from [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/) to an ADLS Gen 2 filesystem for distributed processing. 
