@@ -43,31 +43,31 @@ The data is a copy of the [NOAA Integrated Surface Data (ISD)](https://azure.mic
 
 The data is stored in both compressed parquet files and uncompressed CSV files which are ~8 GB and ~150 GB respectively. There are >1000 individual files. Loaded in a dataframe, the data is ~750 GB. There are ~1.4 B rows.
 
-## Setup
+## Prerequisites
 
 Follow the instructions below to use the demos in this repo with little to no modification.
 
-## Create an ADLS gen2 account
+### Create an ADLS gen2 account
 
 Create or use an existing ADLS gen2 account. Create a filesystem, and register it as an Azure ML BlobDatastore with the account key (using the studio is recommended).
 
-## Create a virtual network 
+### Create a virtual network 
 
 Create or use an existing virtual network (vNET). Both the interface for the Dask cluster and the cluster itself will be in the virtual network. You can quickly create one in the [Azure Portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal) or [Azure CLI](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-cli) if you do not have one already.
 
-## Create and setup compute instance 
+### Create and setup compute instance 
 
 Create an Azure ML Compute Instance in the vNET you have created.
 
 ![Compute instance creation](media/instance-create.png)
 
-## Launch JupyterLab or Jupyter
+### Launch JupyterLab or Jupyter
 
 Launch JupyterLab (recommended) or Jupyter from the list of URIs. 
 
 ![Compute instance URIs](media/instance-launch.png)
 
-## Clone repository
+### Clone repository
 
 You can use the terminal or UI to clone https://github.com/lostmygithubaccount/dasky.git.
 
