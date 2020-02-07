@@ -34,7 +34,7 @@ from dask.distributed import Client
 c = Client(cluster)
 ```
 
-**Warning**: Currently, the demos in this repository will not run as-is. However with little modification, you can replicate them or use with your own data in a ADLS storage account. Please follow the instructions below to use the demos in this repo without modification.
+**Warning**: Currently, the demos in this repository will not run as-is. Please follow the instructions below to use the demos in this repo with little to no modification.
 
 **Warning**: With default subscription quotas, you may not be able to run the notebook as-is. Check your subscription's quota in the region and calculate the maximum size cluster you can use. The default cluster created in this notebook is about the minimum needed to work with the data very quickly without repartitioning, but smaller clusters will work. Do not persist the dataframe on smaller clusters, this will harm performance.
 
@@ -55,7 +55,6 @@ Create or use an existing virtual network (vNET). Both the interface for the Das
 ## Create and setup compute instance 
 
 Create an Azure ML Compute Instance in the vNET you have created.
-
 
 ![Compute instance creation](media/instance-create.png)
 
