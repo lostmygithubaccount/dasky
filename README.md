@@ -10,7 +10,7 @@ Dask + Azure ML = OSS Data Science & ML @ Scale.
 
 
 ## This repo
-This is an informal collection of demos around Dask on Azure ML. I do not know how to write code. People who may know how to write code are writing code [here](https://github.com/drabastomek/dask-cloudprovider) which will soon provide `AzureMLCluster` in `dask_cloudprovider`. 
+This is an informal collection of demos around Dask on Azure ML. I do not know how to write code. People who may know how to write code are writing code [here](https://github.com/drabastomek/dask-cloudprovider) which will soon provide `AzureMLCluster` in `dask_cloudprovider`, simplifying much of the setup you'll see today. 
 
 ```python
 from azureml.core import Workspace
@@ -35,8 +35,9 @@ from dask.distributed import Client
 c = Client(cluster)
 ```
 
+**Warning**: Currently, the demos in this repository will not run as-is. However with little modification, you can replicate them or use with your own data in a ADLS storage account. Please follow the instructions below to use the demos in this repo without modification.
 
-**Warning**: Currently, the demos in this repository will not run as-is. However with little modification, you can replicate them or use with your own data in a ADLS storage account.
+**Warning**: With default subscription quotas, you may not be able to run the notebook as-is. Check your subscription's quota in the region and calculate the maximum size cluster you can use. The default cluster created in this notebook is about the minimum needed to work with the data very quickly without repartitioning, but smaller clusters will work. Do not persist the dataframe on smaller clusters, this will harm performance.
 
 ## Data overview
 
@@ -44,17 +45,18 @@ The data is a copy of the [NOAA Integrated Surface Data (ISD)](https://azure.mic
 
 The data is stored in both compressed parquet files and uncompressed CSV files which are ~8 GB and ~150 GB respectively. There are ~130 individual files. Loaded in a dataframe, the data is ~700 GB. There are ~1.4 B rows.
 
+## Create an ADLS gen2 account
+
+Create or use an existing ADLS gen2 account. Create a filesystem, and register it as an Azure ML BlobDatastore with the account key (using the studio is recommended).
+
 ## Create a virtual network 
 
 Create or use an existing virtual network (vNET). Both the interface for the Dask cluster and the cluster itself will be in the virtual network. You can quickly create one in the [Azure Portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal) or [Azure CLI](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-cli) if you do not have one already.
-
-**Warning**: You may need to change the vNET resource group and name in the configuration cell.
 
 ## Create and setup compute instance 
 
 Create an Azure ML Compute Instance in the vNET you have created.
 
-**Warning**: With default subscription quotas, you may not be able to run the notebook as-is. Check your subscription's quota in the region and calculate the maximum size cluster you can use. The default cluster created in this notebook is about the minimum needed to work with the data very quickly without repartitioning, but smaller clusters will work. Do not persist the dataframe on smaller clusters, this will harm performance.
 
 ![Compute instance creation](media/instance-create.png)
 
