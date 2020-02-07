@@ -27,8 +27,6 @@ Create or use an existing virtual network (vNET). Both the interface for the Das
 
 Create an Azure ML Compute Instance in the vNET you have created.
 
-**Important**: Your workspace must be in *North Central US* or *UK South* due to Compute Instance availability. They will be available in all regions in early February. 
-
 **Warning**: With default subscription quotas, you may not be able to run the notebook as-is. Check your subscription's quota in the region and calculate the maximum size cluster you can use. The default cluster created in this notebook is about the minimum needed to work with the data very quickly without repartitioning, but smaller clusters will work. Do not persist the dataframe on smaller clusters, this will harm performance.
 
 ![Compute instance creation](media/instance-create.png)
