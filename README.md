@@ -3,11 +3,38 @@ forked from https://github.com/danielsc/azureml-and-dask
 # Azure ML and Dask 
 
 ![Summary gif](media/describe.gif)
-![Write gif](media/write.gif)
 
 ## Introduction
 
 Dask + Azure ML = OSS Data Science & ML @ Scale.
+
+
+## This repo
+This is an informal collection of demos around Dask on Azure ML. I do not know how to write code. People who may know how to write code are writing code [here](https://github.com/drabastomek/dask-cloudprovider) which will soon provide `AzureMLCluster` in `dask_cloudprovider`. 
+
+```python
+from azureml.core import Workspace
+from dask_cloudprovider import AzureMLCluster
+
+ws = Workspace.from_config()
+ct = ws.compute_targets['dask-ct']
+
+cluster = AzureMLCluster(ws, ct)
+cluster
+```
+
+![Widget](media/widget.png)
+
+You can follow the link to view the Dask dashboard. You can also use an interactive JupyterLab session on the cluster, with datastores from your workspace mounted.
+
+Alternatively, you can use the cluster in a normal Dask Client.
+
+```python
+from dask.distributed import Client
+
+c = Client(cluster)
+```
+
 
 **Warning**: Currently, the demos in this repository will not run as-is. However with little modification, you can replicate them or use with your own data in a ADLS storage account.
 
@@ -42,3 +69,5 @@ Launch JupyterLab (recommended) or Jupyter from the list of URIs.
 You can use the terminal or UI to clone https://github.com/lostmygithubaccount/dasky.git.
 
 ![Compute instance github](media/instance-github.png)
+
+![Write gif](media/write.gif)
