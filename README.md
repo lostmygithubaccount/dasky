@@ -8,8 +8,7 @@ forked from https://github.com/danielsc/azureml-and-dask
 
 Dask + Azure ML = OSS Data Science & ML @ Scale.
 
-
-## This repo
+### This repo
 This is an informal collection of demos around Dask on Azure ML. I do not know how to write code. People who may know how to write code are writing code [here](https://github.com/drabastomek/dask-cloudprovider) which will soon provide `AzureMLCluster` in `dask_cloudprovider`, simplifying much of the setup you'll see today. 
 
 ```python
@@ -38,11 +37,15 @@ c = Client(cluster)
 
 **Warning**: With default subscription quotas, you may not be able to run the notebook as-is. Check your subscription's quota in the region and calculate the maximum size cluster you can use. The default cluster created in this notebook is about the minimum needed to work with the data very quickly without repartitioning, but smaller clusters will work. Do not persist the dataframe on smaller clusters, this will harm performance.
 
-## Data overview
+### Data overview
 
 The data is a copy of the [NOAA Integrated Surface Data (ISD)](https://azure.microsoft.com/services/open-datasets/catalog/noaa-integrated-surface-data/) moved from [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/) to an ADLS Gen 2 filesystem for distributed processing. 
 
 The data is stored in both compressed parquet files and uncompressed CSV files which are ~8 GB and ~150 GB respectively. There are >1000 individual files. Loaded in a dataframe, the data is ~750 GB. There are ~1.4 B rows.
+
+## Setup
+
+Follow the instructions below to use the demos in this repo with little to no modification.
 
 ## Create an ADLS gen2 account
 
