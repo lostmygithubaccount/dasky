@@ -19,8 +19,7 @@ from dask_cloudprovider import AzureMLCluster
 ws = Workspace.from_config()
 ct = ws.compute_targets['dask-ct']
 
-cluster = AzureMLCluster(ws, ct)
-cluster
+amlcluster = AzureMLCluster(ws, ct)
 ```
 
 ![Widget](media/widget.png)
