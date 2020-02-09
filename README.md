@@ -15,10 +15,11 @@ This is an informal collection of demos around Dask on Azure ML. I do not know h
 from azureml.core import Workspace
 from dask_cloudprovider import AzureMLCluster
 
-ws = Workspace.from_config()
-ct = ws.compute_targets['dask-ct']
+ws  = Workspace.from_config()
+ct  = ws.compute_targets['dask-ct']
+env = ws.environments['dask-env']
 
-amlcluster = AzureMLCluster(ws, ct)
+cluster = AzureMLCluster(ws, ct, env)
 ```
 
 ![Widget](media/widget.png)
