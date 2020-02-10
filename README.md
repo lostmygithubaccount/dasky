@@ -24,7 +24,7 @@ cluster = AzureMLCluster(ws, ct, env)
 
 ![Widget](media/widget.png)
 
-You can follow the link to view the Dask dashboard. You can also use an interactive JupyterLab session on the cluster, with all or some mountable Azure ML Datastores from your Workspace available on the headnode via standard POSIX file system. You can manage the Azure ML Environment, inclduding base docker image and conda/pip packages, which will be used on the cluster. Clusters can be created on most Azure ML VM sizes, including commodity CPU machines for large distributed clusters or high-performance GPU machines for acceleration.
+You can follow the link to view the Dask dashboard. You can also use an interactive JupyterLab session on the cluster, with all or some mountable Azure ML Datastores from your Workspace available on the headnode via standard POSIX file system. You can manage the Azure ML Environment, including base docker image and conda/pip packages, which will be used on the cluster. Clusters can be created on most Azure ML VM sizes, including commodity CPU machines for large distributed clusters or high-performance GPU machines for acceleration.
 
 Alternatively, you can use the cluster in a normal Dask Client.
 
@@ -46,7 +46,9 @@ The data is stored in both compressed parquet files and uncompressed CSV files w
 
 ## Prerequisites
 
-Follow the instructions below to use the demos in this repo with little to no modification.
+* [Azure Machine Learning Workspace](https://aka.ms/azureml/workspace)
+* [Azure Machine Learning Compute Target](https://aka.ms/azureml/computetarget)
+* [Azure Machine Learning Environment](https://aka.ms/azureml/environments) with required packages - see `startcluster-cpu.ipynb`.
 
 ### Create an ADLS gen2 account
 
