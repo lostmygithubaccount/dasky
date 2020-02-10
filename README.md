@@ -47,8 +47,10 @@ The data is stored in both compressed parquet files and uncompressed CSV files w
 ## Prerequisites
 
 * [Azure Machine Learning Workspace](https://aka.ms/azureml/workspace)
-* [Azure Machine Learning Compute Target](https://aka.ms/azureml/computetarget)
-* [Azure Machine Learning Environment](https://aka.ms/azureml/environments) with required packages - see `startcluster-cpu.ipynb`.
+* [Azure Machine Learning Compute Target](https://aka.ms/azureml/computetarget) - see `startcluster-cpu.ipynb`
+* [Azure Machine Learning Environment](https://aka.ms/azureml/environments) with required packages - see `startcluster-cpu.ipynb`
+
+Optional setup for `quickdemo-cpu.ipynb` follows.
 
 ### Create an ADLS gen2 account
 
