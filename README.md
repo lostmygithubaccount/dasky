@@ -22,7 +22,7 @@ env = ws.environments['dask-env']
 cluster = AzureMLCluster(ws, ct, env)
 ```
 
-![Widget](media/widget.png)
+![Widget](media/widget.gif)
 
 You can follow the link to view the Dask dashboard. You can also use an interactive JupyterLab session on the cluster, with all or some mountable Azure ML Datastores from your Workspace available on the headnode via standard POSIX file system. You can manage the Azure ML Environment, including base docker image and conda/pip packages, which will be used on the cluster. Clusters can be created on most Azure ML VM sizes, including commodity CPU machines for large distributed clusters or high-performance GPU machines for acceleration.
 
