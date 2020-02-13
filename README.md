@@ -52,9 +52,9 @@ The data is stored in both compressed parquet files and uncompressed CSV files w
 
 Optional setup for `quickdemo-cpu.ipynb` follows.
 
-### Create an ADLS gen2 account
+### Create an ADLSv2 account
 
-Create or use an existing ADLS gen2 account. Create a filesystem, and register it as an Azure ML BlobDatastore with the account key (using the studio is recommended).
+Create or use an existing ADLSv2 account. Create a filesystem, and register it as an Azure ML BlobDatastore with the account key (using the studio is recommended).
 
 ### Create a virtual network 
 
