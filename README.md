@@ -45,10 +45,10 @@ The data is stored in both compressed parquet files and uncompressed CSV files w
 ## Prerequisites
 
 * [Azure Machine Learning Workspace](https://aka.ms/azureml/workspace)
-* [Azure Machine Learning Compute Target](https://aka.ms/azureml/computetarget) - see `startcluster-cpu.ipynb`
-* [Azure Machine Learning Environment](https://aka.ms/azureml/environments) with required packages - see `startcluster-cpu.ipynb`
+* [Azure Machine Learning Compute Target](https://aka.ms/azureml/computetarget) - see `01.start-cpu-cluster.ipynb`
+* [Azure Machine Learning Environment](https://aka.ms/azureml/environments) with required packages - see `01.start-cpu-cluster.ipynb`
 
-Optional setup for `quickdemo-cpu.ipynb` follows.
+Optional setup for `02.cpu-cluster-demo.ipynb` follows, which is an end-to-end machine learning tutorial on ~20 GB of compressed Parquet files - this is equivalent to and can also be run on the same data in 150 GB of CSV files, but is excluded for brevity. 
 
 ### Create a virtual network 
 
