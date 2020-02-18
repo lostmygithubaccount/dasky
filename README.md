@@ -34,8 +34,6 @@ from dask.distributed import Client
 c = Client(cluster)
 ```
 
-**Warning**: Currently, the demos in this repository will not run as-is. Please follow the instructions below to use the demos in this repo with little to no modification.
-
 **Warning**: With default subscription quotas, you may not be able to run the notebook as-is. Check your subscription's quota in the region and calculate the maximum size cluster you can use. The default cluster created in this notebook is about the minimum needed to work with the data very quickly without repartitioning, but smaller clusters will work.
 
 ### Data overview
