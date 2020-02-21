@@ -11,7 +11,7 @@ Dask + Azure ML = OSS Data Science & ML @ Scale.
 ### This repo
 This is an informal collection of demos around Dask on Azure ML. I do not know how to write code. People who may know how to write code are writing code [here](https://github.com/drabastomek/dask-cloudprovider) which will soon provide `AzureMLCluster` in `dask_cloudprovider`, simplifying much of the setup you'll see today. 
 
-This repo is focused on showing `dask_cloudprovider.AzureMLCluster` on large CPU clusters. For GPU examples, see: https://github.com/drabastomek/GTC
+This repo is focused on showing `dask_cloudprovider.AzureMLCluster` on large CPU clusters. For GPU examples, see: https://github.com/drabastomek/GTC. Regardless, the setup is identical and `dask-cuda` workers are automatically used if the Azure ML Compute target supports it. 
 
 ```python
 from azureml.core import Workspace
