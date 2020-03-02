@@ -1,5 +1,7 @@
 forked from https://github.com/danielsc/azureml-and-dask
 
+**Note:** progress on this repo is currently on hold :) 
+
 # Azure ML and Dask 
 
 ![Summary gif](media/describe.gif)
