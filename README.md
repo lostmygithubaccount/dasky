@@ -19,7 +19,7 @@ from dask_cloudprovider import AzureMLCluster
 
 ws  = Workspace.from_config()
 ct  = ws.compute_targets['dask-ct']
-env = ws.environments['dask-env']
+env = ws.environments['AzureML-Dask-CPU']
 
 cluster = AzureMLCluster(ws, ct, env)
 ```
