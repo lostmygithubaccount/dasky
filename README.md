@@ -38,3 +38,5 @@ If you are using a vNET with a Compute Instance, see [this example](ci-on-vnet/0
 >Note: there is a known issue with the Dask dashboard not working on a compute instance. If you need the dashboard, it is recommended to use the local setup. 
 
 If you are running from local, see [this example](local/01.start-cpu-ssh.ipynb).
+
+>Note: there is a known issue running from the Windows Subsystem for Linux (WSL).
