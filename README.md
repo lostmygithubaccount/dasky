@@ -17,7 +17,15 @@ ws  = Workspace.from_config()
 ct  = ws.compute_targets['dask-ct']
 env = ws.environments['AzureML-Dask-CPU']
 
-cluster = AzureMLCluster(ws, ct, env)
+cluster = AzureMLCluster(ws, 
+                         ct, 
+                         ws.environments['AzureML-Dask-CPU'], 
+                         jupyter=True, 
+                         datastores=[ws.datastores[datastore] for datastore in ws.datastores],
+                         scheduler_idle_timeout=7200,
+                         admin_username=name,
+                         admin_ssh_key='private.key'
+                        )
 ```
 
 ![Widget](media/widget.gif)
