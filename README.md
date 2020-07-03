@@ -21,7 +21,7 @@ cluster = AzureMLCluster(ws,
                          ct, 
                          ws.environments['AzureML-Dask-CPU'], 
                          jupyter=True, 
-                         datastores=[ws.datastores[datastore] for datastore in ws.datastores],
+                         datastores=ws.datastores.values(),
                          scheduler_idle_timeout=7200,
                          admin_username=name,
                          admin_ssh_key='private.key'
