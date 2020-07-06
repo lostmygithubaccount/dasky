@@ -13,19 +13,9 @@ Dask + Azure ML = OSS Data Science & ML @ Scale.
 from azureml.core import Workspace
 from dask_cloudprovider import AzureMLCluster
 
-ws  = Workspace.from_config()
-ct  = ws.compute_targets['dask-ct']
-env = ws.environments['AzureML-Dask-CPU']
+ws = Workspace.from_config()
 
-cluster = AzureMLCluster(ws, 
-                         ct, 
-                         ws.environments['AzureML-Dask-CPU'], 
-                         jupyter=True, 
-                         datastores=ws.datastores.values(),
-                         scheduler_idle_timeout=7200,
-                         admin_username=name,
-                         admin_ssh_key='private.key'
-                        )
+cluster = AzureMLCluster(ws)
 ```
 
 ![Widget](media/widget.gif)
@@ -35,12 +25,12 @@ You can follow the link to view the Dask dashboard. You can also use an interact
 Clusters can be created on most Azure ML VM sizes, including commodity CPU machines for large distributed clusters or high-performance GPU machines.
 
 ## How to run
-You can connect to the `AzureMLCluster` through a Compute Instance (CI) on a Virtual Network (vNET) or local via port forwarding. The latter requires setting up SSH key pair for the compute cluster. 
+You can connect to the `AzureMLCluster` through a Compute Instance (CI) on a Virtual Network (vNET) or local via port forwarding.
 
 If you are using a vNET with a Compute Instance, see [this example](ci-on-vnet/01.start-cpu-cluster.ipynb) for getting started.
 
 >Note: there is a known issue with the Dask dashboard not working on a compute instance. If you need the dashboard, it is recommended to use the local setup. 
 
-If you are running from local, see [this example](local/01.start-cpu-ssh.ipynb).
+If you are running from local, see [this example](local/01.start-cpu.ipynb).
 
 >Note: there is a known issue running from the Windows Subsystem for Linux (WSL).
