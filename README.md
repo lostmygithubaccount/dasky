@@ -13,7 +13,7 @@ Dask + Azure ML = OSS Data Science & ML @ Scale.
 from azureml.core import Workspace
 from dask_cloudprovider import AzureMLCluster
 
-ws  = Workspace.from_config()
+ws = Workspace.from_config()
 
 cluster = AzureMLCluster(ws)
 ```
