@@ -14,7 +14,7 @@ Dask + Azure ML = OSS Data Science & ML @ Scale.
 
 There are a few options for starting a Dask cluster on Azure ML Compute.
 
-### `dask-cloudprovider` managed compute target (recommended)
+### managed compute target (recommended)
 
 See [local](local) for letting `dask-cloudprovider` take care of creating and deleting the Azure ML compute target on your behalf. You can specify a `vm_size` and other parameters.
 
